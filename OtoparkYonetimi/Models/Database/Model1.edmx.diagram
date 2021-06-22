@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="63e5581b16084bbd9a93c57ec5b92e4f" Name="Diagram1">
+        <EntityTypeShape EntityType="OtoparkYonetimiModel.Tbl_Araclar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtoparkYonetimiModel.Tbl_Kisiler" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtoparkYonetimiModel.Tbl_ParkYeri" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="OtoparkYonetimiModel.FK_Tbl_Araclar_Tbl_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="OtoparkYonetimiModel.FK_Tbl_ParkYeri_Tbl_Araclar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OtoparkYonetimiModel.Tbl_Kullanicilar" Width="1.5" PointX="8.125" PointY="1.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

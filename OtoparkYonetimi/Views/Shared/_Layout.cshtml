@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Otopark Yönetimi</title>
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="~/Content/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="icon" href="~/Content/img/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="~/Scripts/materialize.min.js"></script>
+</head>
+<body background="~/Content/img/ap1.png">
+    <div class="navbar-fixed">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#!" class="brand-logo center"><img class="responsive-img width " src="~/Content/img/logo.png"></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="left hide-on-med-and-down">
+                        <li class="active"><a href="/Home/Index">Anasayfa</a></li>
+                        <li><a href="/Home/YeniKayit">Kişi Kayıt</a></li>
+                        <li><a href="/Arac/AracGoster">Araç Kayıt</a></li>
+                        <li><a href="/Home/Cikis">Kişiler</a></li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/Arac/AracCikis">Araç Bilgileri</a></li>
+                        <li><a href="/Durum/OtoparkDurum">Otopark Durumu</a></li>
+                        <li><a href="/Kullanici/Logout">Çıkış Yap</a></li>
+                        <li><a style="color:ActiveBorder">@Session["KullaniciAdi"]</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    @*<ul class="side-nav" id="mobile-demo">
+            <li class="active"><a href="#">Anasayfa</a></li>
+            <li><a href="/Home/YeniKayit">Otopark Kayıt</a></li>
+            <li><a href="/Home/Cikis">Otopark Araç Çıkış</a></li>
+            <li><a href="/Durum/OtoparkDurum">Otopark Durumu</a></li>
+        </ul>*@
+    @*Header*@
+
+    @RenderBody()
+
+    <!-- Footer  -->
+    <footer class="page-footer footer-back">
+        <div class="footer-copyright">
+            <div class="container" style="margin-bottom:10px">
+                © @DateTime.Now.Year Copyright Murat Kavak. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Bitiş -->
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/materialize")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

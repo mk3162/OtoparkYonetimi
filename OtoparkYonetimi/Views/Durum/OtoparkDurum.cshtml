@@ -1,0 +1,95 @@
+﻿@using OtoparkYonetimi.Models.Database
+@model List<Tbl_ParkYeri>
+@{
+    ViewBag.Title = "OtoparkDurum";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12">
+                <div>
+                </div>
+                @if (User.IsInRole("A") || User.IsInRole("P"))
+                {
+                    <h4>Park Edeceğiniz Yeri Seçin</h4>
+                }
+                @if (User.IsInRole("O"))
+                {
+                    <h4>Otoparkta Bulunan Araçlar</h4>
+                }
+                <hr>
+                <form class="col s12" method="post">
+                    <div class="row">
+                        <div class="col m5 s12 input-field">
+                            @if (User.IsInRole("A") || User.IsInRole("P"))
+                            {
+                                <input name="AracId" type="text" class="validate">
+                                <label>Araç ID Giriniz</label>
+                            }
+                        </div>
+                        <div class="col m5 s12 input-field">
+                            @if (User.IsInRole("A") || User.IsInRole("P"))
+                            {
+                                <input name="Parkyeri" type="text" class="validate">
+                                <label>Park Yerini Girin</label>
+                            }
+                        </div>
+                        <div class="col m2 s12">
+                            @if (User.IsInRole("A") || User.IsInRole("P"))
+                            {
+                                <button type="submit" style="margin-top:15%;" class="waves-effect waves-light btn">Park Et</button>
+                            }
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    @if (User.IsInRole("A"))
+                    {
+                        <h4>Tüm Araçların Listesi</h4>
+                    }
+                    @if (User.IsInRole("P") || User.IsInRole("O"))
+                    {
+                        <h4>Sadece İçeride Bulunan Araçlar</h4>
+                    }
+                </div>
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="row">
+                            @foreach (var y in Model)
+                            {
+                                <div class="col s12 m4">
+                                    <div style="background-color: #00263A;" class="card-panel">
+                                        <span class="white-text">
+                                            @y.AracId Nolu Araç - @y.ParkYeri
+                                            @if (User.IsInRole("A"))
+                                            {
+                                                <br />
+                                                <label class="yellow-text">Ödenecek Tutar: @y.ParkUcreti TL</label>
+                                            }
+                                            @if (User.IsInRole("A") || User.IsInRole("P"))
+                                            {
+                                                <a href="/Durum/Sil/@y.ParkYeriId" style="margin-top:-2%;" class="waves-effect waves-light red darken-3 btn right">Sil</a>
+                                            }
+                                        </span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
+    </script>
+}

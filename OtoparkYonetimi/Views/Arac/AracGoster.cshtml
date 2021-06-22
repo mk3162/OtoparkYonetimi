@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "AracGoster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>ARAÇ KAYIT</h4>
+                    <p class="center light">Otoparka giren araçların kaydedildiği alan</p>
+                    <hr class="hr">
+                    <div class="row">
+                        <form class="col s12" method="post">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input name="KisiId" type="number" class="validate">
+                                    <label for="KisiId">Araç Kime Ait - ID</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input name="AracPlaka" type="text" class="validate">
+                                    <label for="AracPlaka" class="active">Araç Bilgileriniz</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input name="AracMarka" type="text" class="validate">
+                                    <label for="AracMarka">Markası</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">people_outline</i>
+                                    <input name="AracRenk" type="text" class="validate">
+                                    <label for="AracRenk">Rengi</label>
+                                </div>
+                            </div>
+                            <div class="col m12 s12">
+                                <button type="submit" class="waves-effect waves-light btn btn-small spinner-blue lighten-2"><i class="material-icons left">chevron_right</i><i class="material-icons right">chevron_left</i>Aracı Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+

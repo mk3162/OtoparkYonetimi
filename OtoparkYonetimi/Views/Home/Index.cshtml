@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col m12 center">
+            <img style="border-radius: 0px 0px 5px 5px;" class="responsive-img z-depth-2" src="~/Content/img/banner.jpg">
+        </div>
+    </div>
+</div>
+
+<section class="services_area">
+    <div class="container">
+        <div class="row">
+            @if (User.IsInRole("A") || User.IsInRole("P"))
+            {
+                <div class="col m4 s8">
+                    <div data-line="❤" class="services_item">
+                        <div class="round_icon">
+                            <img src="~/Content/img/parking1.png" alt="icon">
+                        </div>
+                        <h2>Otopark Kayıt</h2>
+                        <p>Otoparka giren araçların kayıt işlemlerinin yapıldığı alan</p>
+                        <a href="/Home/YeniKayit" class="waves-effect waves-light btn">Kayıt</a>
+                    </div>
+                </div>
+            }
+            @if (User.IsInRole("O"))
+            {
+                <div class="center">
+                    <div data-line="❤" class="services_item">
+                        <div class="round_icon">
+                            <img src="~/Content/img/parking-icon-2.png" alt="icon">
+                        </div>
+                        <h2>Otopark Durumu</h2>
+                        <p>Otoparktaki araçların durumlarını görebildiğiniz alan</p>
+                        <a href="/Durum/OtoparkDurum" class="waves-effect waves-light btn">Otopark Durumu</a>
+                    </div>
+                </div>
+            }
+            else if (User.IsInRole("A") || User.IsInRole("P"))
+            {
+                <div class="col m4 s8">
+                    <div data-line="❤" class="services_item">
+                        <div class="round_icon">
+                            <img src="~/Content/img/parking-icon-2.png" alt="icon">
+                        </div>
+                        <h2>Otopark Durumu</h2>
+                        <p>Otoparktaki araçların durumlarını görebildiğiniz alan</p>
+                        <a href="/Durum/OtoparkDurum" class="waves-effect waves-light btn">Otopark Durumu</a>
+                    </div>
+                </div>
+            }
+
+            @if (User.IsInRole("A") || User.IsInRole("P"))
+            {
+                <div class="col m4 s8">
+                    <div data-line="❤" class="services_item">
+                        <div class="round_icon">
+                            <img src="~/Content/img/valet-parking.png" alt="icon">
+                        </div>
+                        <h2>Otoparktan Araç Çıkışı</h2>
+                        <p>Otoparktan çıkan araçların işlemlerinin yapıldığı alan</p>
+                        <a href="/Arac/AracCikis" class="waves-effect waves-light btn">Otoparktan Araç Çıkışı</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

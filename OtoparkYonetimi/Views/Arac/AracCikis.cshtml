@@ -1,0 +1,43 @@
+﻿@using OtoparkYonetimi.Models.Database
+@model List<Tbl_Araclar>
+@{
+    ViewBag.Title = "AracCikis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col m12 s12">
+            <h4>Otoparktaki Araçlar</h4>
+            <table class="highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th>Aracın Numarası (ID)</th>
+                        <th>Plaka</th>
+                        <th>Aracın Markası</th>
+                        <th>Aracın Rengi</th>
+                        <th>Araç Sahibi (ID)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var itemm in Model)
+                    {
+                    <tr>
+                        <td>@itemm.AracId</td>
+                        <td>@itemm.AracPlaka</td>
+                        <td>@itemm.AracMarka</td>
+                        <td>@itemm.AracRenk</td>
+                        <td>@itemm.KisiId</td>
+                        <td><a href="/Arac/AracGetir/@itemm.AracId" class="waves-effect waves-light btn blue">Araç Güncelle</a></td>
+                        <td><a href="/Arac/Sil/@itemm.AracId" class="waves-effect waves-light btn red darken-2">Araç Sil</a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />

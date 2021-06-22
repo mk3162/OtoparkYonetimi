@@ -39,7 +39,7 @@
                         <div class="col m2 s12">
                             @if (User.IsInRole("A") || User.IsInRole("P"))
                             {
-                                <button type="submit" style="margin-top:15%;" class="waves-effect waves-light btn">Park Et</button>
+                            <button type="submit" style="margin-top:15%;" class="waves-effect waves-light btn">Park Et</button>
                             }
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                                             }
                                             @if (User.IsInRole("A") || User.IsInRole("P"))
                                             {
-                                                <a href="/Durum/Sil/@y.ParkYeriId" style="margin-top:-2%;" class="waves-effect waves-light red darken-3 btn right">Sil</a>
+                                                <a href="/Durum/Sil/@y.ParkYeriId" style="margin-top:-2%;" class="waves-effect waves-light btn light red btn right">Sil</a>
                                             }
                                         </span>
                                     </div>
